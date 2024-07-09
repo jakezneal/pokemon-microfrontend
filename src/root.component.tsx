@@ -1,3 +1,14 @@
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import PokemonPage from './pokemon-page/pokemon-page.component';
+
 export default function Root(props) {
-    return <section>{props.name} is mounted!</section>;
+    const router = createBrowserRouter([
+        {
+            path: '/pokemon',
+            element: <PokemonPage />,
+        },
+    ]);
+
+    return <RouterProvider router={router} />;
 }
